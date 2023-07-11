@@ -8,7 +8,7 @@
 ****************************************************************************************************************************
 ! Note: lines starting with "!" are treated as comment lines -- there is no limit on the number of comment 
 lines.
-!    lines starting with <xxx> are read till "!"
+!     lines starting with <xxx> are read till "!"
 !
 ! 
 ****************************************************************************************************************************
