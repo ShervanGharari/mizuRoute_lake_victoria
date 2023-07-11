@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --account=rpp-kshook
+#SBATCH --ntasks=16
+#SBATCH --mem-per-cpu=16G
+#SBATCH --time=24:00:00           # time (DD-HH:MM)
+#SBATCH --job-name=HDMA_ERA5
+#SBATCH --error=errors_HDMA_ERA5
+
+# load the needed libraries
+module load intel/2020.1.217 openmpi netcdf netcdf-fortran pnetcdf
+
+# run HDMA_ERA5 case
+#srun ./route_runoff.cesm_coupling.exe  settings/HDMA_ERA5/HDMA_ERA5-runoff.control # run without lakes
+#srun ./route_runoff.cesm_coupling.exe  settings/HDMA_ERA5/HDMA_ERA5-runoff-lake.control # run with lakes
+#rm ./output/HDMA_ERA5/HDMA_ERA5_lake.r.1970-01-01-00000.nc
+#cp ./output/HDMA_ERA5/HDMA_ERA5_lake.r.2019-01-01-00000.nc 
+./output/HDMA_ERA5/HDMA_ERA5_lake.r.1970-01-01-00000.nc
+#srun ./route_runoff.cesm_coupling.exe  settings/HDMA_ERA5/HDMA_ERA5-runoff-lake-restart.control # run with 
+lakes
+srun ./route_runoff.cesm_coupling.exe  settings/HDMA_ERA5/HDMA_ERA5-runoff-lake-restart-WM.control # run with 
+lakes for lake Victoria target volume
+
