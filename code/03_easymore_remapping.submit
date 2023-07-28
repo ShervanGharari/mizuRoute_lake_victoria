@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH --account=group_name
+#SBATCH --account=rpp-kshook
 #SBATCH --ntasks=1
-#SBATCH --mem-per-cpu=32G
-#SBATCH --time=24:00:00    # time (DD-HH:MM)
-#SBATCH --job-name=SUMMA_post_processing
-#SBATCH --error=errors1
+#SBATCH --mem-per-cpu=4G
+#SBATCH --time=2:00:00    # time (DD-HH:MM)
+#SBATCH --job-name=VIC_remapping
+#SBATCH --error=errors_VIC_remapping
 
 # load needed modules
 module load StdEnv/2020 gcc/9.3.0 openmpi/4.0.3
@@ -17,12 +17,7 @@ source $SLURM_TMPDIR/env/bin/activate
 pip install --no-index --upgrade pip
 pip install --no-index easymore
 pip install --no-index jupyter
-pip install --no-index xarray
 
 # run python script that include easymore remapper
 jupyter nbconvert 03_easymore_remapping.ipynb --to python
 python 03_easymore_remapping.py
-
-# run creation of submit scripts
-jupyter nbconvert 04_control_file_creation.ipynb --to python
-python 04_control_file_creation.py
