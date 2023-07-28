@@ -24,5 +24,5 @@ jupyter nbconvert 03_easymore_remapping.ipynb --to python
 python 03_easymore_remapping.py
 
 # run creation of submit scripts
-jupyter nbconvert 03_easymore_remapping.ipynb --to python
+jupyter nbconvert 04_control_file_creation.ipynb --to python
 python 04_control_file_creation.py
