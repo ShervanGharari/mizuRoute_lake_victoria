@@ -1,0 +1,29 @@
+#!/bin/bash
+#SBATCH --account=rpp-kshook
+#SBATCH --ntasks=1
+#SBATCH --mem-per-cpu=1G
+#SBATCH --time=1:00:00           # time (DD-HH:MM)
+#SBATCH --job-name=lake_victoria
+#SBATCH --error=errors_lake_victoria
+
+# load the needed libraries
+module load intel/2020.1.217 openmpi netcdf netcdf-fortran pnetcdf
+
+# make the exe executable
+Chmod +x route_runoff.exe
+
+# simulation
+srun ./route_runoff.exe settings/lake_victoria_0.control
+srun ./route_runoff.exe settings/lake_victoria_1.control
+srun ./route_runoff.exe settings/lake_victoria_2.control
+srun ./route_runoff.exe settings/lake_victoria_3.control
+srun ./route_runoff.exe settings/lake_victoria_4.control
+srun ./route_runoff.exe settings/lake_victoria_5.control
+srun ./route_runoff.exe settings/lake_victoria_6.control
+srun ./route_runoff.exe settings/lake_victoria_7.control
+srun ./route_runoff.exe settings/lake_victoria_8.control
+srun ./route_runoff.exe settings/lake_victoria_9.control
+srun ./route_runoff.exe settings/lake_victoria_10.control
+srun ./route_runoff.exe settings/lake_victoria_11.control
+srun ./route_runoff.exe settings/lake_victoria_12.control
+srun ./route_runoff.exe settings/lake_victoria_13.control
