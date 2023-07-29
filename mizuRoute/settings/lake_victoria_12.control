@@ -8,7 +8,7 @@
 ! ****************************************************************************************************************************
 ! RUN CONTROL
 ! --------------------------
-<case_name>             case_12_0.753                                    ! simulation name - used for output netcdf name
+<case_name>             case_12_0.768                                    ! simulation name - used for output netcdf name
 <sim_start>             1960-01-01                                   ! time of simulation start (year-month-day)
 <sim_end>               2020-12-31                                   ! time of simulation end (year-month-day)
 <route_opt>             1                                            ! option for routing schemes 0-> both, 1->IRF, 2->KWT otherwise error
@@ -43,7 +43,7 @@
 <dname_ylat>            lat                                          ! name of y(i) dimension
 <units_qsim>            mm/day                                       ! units of runoff
 <dt_qsim>               86400                                        ! time interval of the runoff
-<scale_factor_Ep>       0.753                            ! scale factor for precipitation
+<scale_factor_Ep>       0.768                            ! scale factor for precipitation
 ! ****************************************************************************************************************************
 ! DEFINE RUNOFF MAPPING FILE
 ! ----------------------------------
@@ -54,8 +54,8 @@
 <vname_num_qhru>        frequency                                    ! name of variable containing numbers of runoff HRUs wi>
 <vname_i_index>         i_index                                      ! name of ylat index
 <vname_j_index>         j_index                                      ! name of xlon index
-<dname_hru_remap>	    polyid                                       ! name of hru dimension name
-<dname_data_remap>	    intersect                                    ! name of data dimension name
+<dname_hru_remap>       polyid                                       ! name of hru dimension name
+<dname_data_remap>      intersect                                    ! name of data dimension name
 ! ****************************************************************************************************************************
 ! Spatially constant parameter Namelist name
 ! ---------------------------
@@ -79,13 +79,13 @@
 <varname_HYP_E_emr>        HYP_E_emr                                 !
 <varname_HYP_E_lim>        HYP_E_lim                                 !
 <varname_HYP_E_min>        HYP_E_min                                 !
-<varname_HYP_E_zero>	   HYP_E_zero                                !
+<varname_HYP_E_zero>       HYP_E_zero                                !
 <varname_HYP_Qrate_emr>    HYP_Qrate_emr                             !
 <varname_HYP_Erate_emr>    HYP_Erate_emr                             !
 <varname_HYP_Qrate_prim>   HYP_Qrate_prim                            !
 <varname_HYP_Qrate_amp>    HYP_Qrate_amp                             !
 <varname_HYP_Qrate_phs>    HYP_Qrate_phs                             !
-<varname_HYP_prim_F>	   HYP_prim_F                                !
+<varname_HYP_prim_F>       HYP_prim_F                                !
 <varname_HYP_A_avg>        HYP_A_avg                                 !
 ! ****************************************************************************************************************************
 ! ****************************************************************************************************************************

@@ -79,13 +79,13 @@
 <varname_HYP_E_emr>        HYP_E_emr                                 !
 <varname_HYP_E_lim>        HYP_E_lim                                 !
 <varname_HYP_E_min>        HYP_E_min                                 !
-<varname_HYP_E_zero>	   HYP_E_zero                                !
+<varname_HYP_E_zero>       HYP_E_zero                                !
 <varname_HYP_Qrate_emr>    HYP_Qrate_emr                             !
 <varname_HYP_Erate_emr>    HYP_Erate_emr                             !
 <varname_HYP_Qrate_prim>   HYP_Qrate_prim                            !
 <varname_HYP_Qrate_amp>    HYP_Qrate_amp                             !
 <varname_HYP_Qrate_phs>    HYP_Qrate_phs                             !
-<varname_HYP_prim_F>	   HYP_prim_F                                !
+<varname_HYP_prim_F>       HYP_prim_F                                !
 <varname_HYP_A_avg>        HYP_A_avg                                 !
 ! ****************************************************************************************************************************
 ! ****************************************************************************************************************************
