@@ -14,12 +14,14 @@
 <route_opt>             1                                            ! option for routing schemes 0-> both, 1->IRF, 2->KWT otherwise error
 <is_lake_sim>           T                                            ! identifies the lake simulation is ON
 <restart_write>         last                                         ! output state of the last state
+!<fname_state_in>       case_5_0.699.r.1979-01-01-00000.nc              ! starting point
 ! ****************************************************************************************************************************
 ! DEFINE DIRECTORIES
 ! --------------------------
 <ancil_dir>             ./ancillary_data/                            ! directory containing ancillary data (river segment data,
 <input_dir>             ./input/                                     ! directory containing input data
 <output_dir>            ./output/                                    ! directory containing output data
+<restart_dir>           ./output/                                    ! Directory containing restart data
 ! ****************************************************************************************************************************
 ! DEFINE FINE NAME AND DIMENSIONS
 ! ---------------------------------------

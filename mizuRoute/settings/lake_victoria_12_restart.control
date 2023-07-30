@@ -8,13 +8,13 @@
 ! ****************************************************************************************************************************
 ! RUN CONTROL
 ! --------------------------
-<case_name>             case_0_1.000                                    ! simulation name - used for output netcdf name
+<case_name>             case_12_0.768                                    ! simulation name - used for output netcdf name
 <sim_start>             1960-01-01                                   ! time of simulation start (year-month-day)
 <sim_end>               2020-12-31                                   ! time of simulation end (year-month-day)
 <route_opt>             1                                            ! option for routing schemes 0-> both, 1->IRF, 2->KWT otherwise error
 <is_lake_sim>           T                                            ! identifies the lake simulation is ON
 <restart_write>         last                                         ! output state of the last state
-!<fname_state_in>       case_0_1.000.r.1979-01-01-00000.nc              ! starting point
+<fname_state_in>        case_12_0.768.r.1979-01-01-00000.nc              ! starting point
 ! ****************************************************************************************************************************
 ! DEFINE DIRECTORIES
 ! --------------------------
@@ -45,7 +45,7 @@
 <dname_ylat>            lat                                          ! name of y(i) dimension
 <units_qsim>            mm/day                                       ! units of runoff
 <dt_qsim>               86400                                        ! time interval of the runoff
-<scale_factor_Ep>       1.000                            ! scale factor for precipitation
+<scale_factor_Ep>       0.768                            ! scale factor for precipitation
 ! ****************************************************************************************************************************
 ! DEFINE RUNOFF MAPPING FILE
 ! ----------------------------------
