@@ -1,0 +1,32 @@
+#!/bin/bash
+#SBATCH --account=rpp-kshook
+#SBATCH --ntasks=1
+#SBATCH --mem-per-cpu=1G
+#SBATCH --time=1:00:00           # time (DD-HH:MM)
+#SBATCH --job-name=lake_victoria
+#SBATCH --error=errors_lake_victoria
+
+# load the needed libraries
+module load openmpi netcdf netcdf-fortran pnetcdf python/3.8.10
+
+#
+rm -rf ~/run_mizuRoute
+virtualenv ~/run_mizuRoute
+source ~/run_mizuRoute/bin/activate
+pip install --no-index --upgrade pip
+pip install --no-index numpy
+pip install --no-index pandas
+pip install --no-index xarray
+pip install --no-index matplotlib
+pip install --no-index jupyter
+
+
+# change the jupyter notebook to python
+jupyter nbconvert 04_control_file_creation.ipynb --to python
+
+python 04_control_file_creation.py # compare the result with repository
+
+# make the exe executable
+chmod +x route_runoff.exe
+
+#
