@@ -6,11 +6,15 @@
 #SBATCH --job-name=lake_victoria
 #SBATCH --error=errors_lake_victoria
 
-# load the needed libraries
-module load openmpi netcdf netcdf-fortran pnetcdf python/3.8.10 nco
-
 #
+module reset
+module purge
 deactivate
+
+# load the needed libraries
+module load openmpi netcdf netcdf-fortran pnetcdf python/3.8.10 mpi4py/3.0.3
+
+# installing the virtual env
 rm -rf ~/run_mizuRoute_env
 virtualenv ~/run_mizuRoute_env
 source ~/run_mizuRoute_env/bin/activate
@@ -19,12 +23,11 @@ pip install --no-index numpy
 pip install --no-index pandas
 pip install --no-index xarray
 pip install --no-index matplotlib
-pip install --no-index netcdf4
+pip install --no-index netCDF4
 pip install --no-index jupyter
 pip install --no-index nbconvert
 
 
-# change the jupyter notebook to python
+# change the jupyter notebook to python and execute
 python -m nbconvert 04_mizuRoute_simulation.ipynb --to python
-
 python 04_mizuRoute_simulation.py # compare the result with repository
