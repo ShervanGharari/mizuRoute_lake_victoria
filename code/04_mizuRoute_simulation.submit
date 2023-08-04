@@ -7,7 +7,7 @@
 #SBATCH --error=errors_lake_victoria
 
 # load the needed libraries
-module load openmpi netcdf netcdf-fortran pnetcdf python/3.8.10
+module load openmpi netcdf netcdf-fortran pnetcdf python/3.8.10 nco
 
 #
 rm -rf ~/run_mizuRoute
@@ -18,15 +18,12 @@ pip install --no-index numpy
 pip install --no-index pandas
 pip install --no-index xarray
 pip install --no-index matplotlib
+pip install --no-index netcdf4
 pip install --no-index jupyter
+pip install --no-index nbconvert
 
 
 # change the jupyter notebook to python
-jupyter nbconvert 04_control_file_creation.ipynb --to python
+python -m nbconvert 04_control_file_creation.ipynb --to python
 
 python 04_control_file_creation.py # compare the result with repository
-
-# make the exe executable
-chmod +x route_runoff.exe
-
-#

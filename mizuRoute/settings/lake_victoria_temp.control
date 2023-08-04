@@ -9,12 +9,12 @@
 ! RUN CONTROL
 ! --------------------------
 <case_name>             case_sim                                     ! simulation name - used for output netcdf name
-<sim_start>             1960-01-01                                   ! time of simulation start (year-month-day)
-<sim_end>               2020-12-31                                   ! time of simulation end (year-month-day)
+<sim_start>             start_date_temp                              ! time of simulation start (year-month-day)
+<sim_end>               end_date_temp                                ! time of simulation end (year-month-day)
 <route_opt>             1                                            ! option for routing schemes 0-> both, 1->IRF, 2->KWT otherwise error
 <is_lake_sim>           T                                            ! identifies the lake simulation is ON
 <restart_write>         last                                         ! output state of the last state
-!<fname_state_in>       case_sim.r.1979-01-01-00000.nc               ! starting point
+!<fname_state_in>       case_sim.r.2000-01-01-00000.nc               ! starting point
 ! ****************************************************************************************************************************
 ! DEFINE DIRECTORIES
 ! --------------------------
