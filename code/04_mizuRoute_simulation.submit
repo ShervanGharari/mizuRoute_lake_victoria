@@ -10,9 +10,10 @@
 module load openmpi netcdf netcdf-fortran pnetcdf python/3.8.10 nco
 
 #
-rm -rf ~/run_mizuRoute
-virtualenv ~/run_mizuRoute
-source ~/run_mizuRoute/bin/activate
+deactivate
+rm -rf ~/run_mizuRoute_env
+virtualenv ~/run_mizuRoute_env
+source ~/run_mizuRoute_env/bin/activate
 pip install --no-index --upgrade pip
 pip install --no-index numpy
 pip install --no-index pandas
@@ -24,6 +25,6 @@ pip install --no-index nbconvert
 
 
 # change the jupyter notebook to python
-python -m nbconvert 04_control_file_creation.ipynb --to python
+python -m nbconvert 04_mizuRoute_simulation.ipynb --to python
 
-python 04_control_file_creation.py # compare the result with repository
+python 04_mizuRoute_simulation.py # compare the result with repository
