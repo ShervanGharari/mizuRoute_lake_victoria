@@ -26,8 +26,18 @@ pip install --no-index matplotlib
 pip install --no-index netCDF4
 pip install --no-index jupyter
 pip install --no-index nbconvert
+pip install pyviscous
+
+# installing the virtual env
+# source ~/run_mizuRoute_env/bin/activate
 
 
 # change the jupyter notebook to python and execute
 python -m nbconvert 04_mizuRoute_simulation.ipynb --to python
-python 04_mizuRoute_simulation.py # compare the result with repository
+python 04_mizuRoute_simulation.py 
+
+python -m nbconvert 05_plot_simulation.ipynb --to python
+python 05_plot_simulation.py 
+
+python -m nbconvert 06_sensitivity.ipynb --to python
+python 06_sensitivity.py 
