@@ -1,0 +1,18 @@
+python3.9 -m pip install virtualenv
+python3.9 -m virtualenv miz-env
+source miz-env/bin/activate
+python3.9 -m pip install --upgrade pip
+python3.9 -m pip install numpy
+python3.9 -m pip install pandas
+python3.9 -m pip install xarray
+python3.9 -m pip install netCDF4
+python3.9 -m pip install matplotlib
+python3.9 -m pip install networkx
+python3.9 -m pip install contextily
+python3.9 -m pip install geopandas
+python3.9 -m pip install shapely
+python3.9 -m pip install jupyter
+python3.9 -m pip install ipykernel
+python3.9 -m ipykernel install --name=miz-env # Add the new virtual environment to Jupyter
+jupyter kernelspec list # list existing Jupyter virtual environments
+jupyter notebook # launch jupyter notebook; it should be done at example location
