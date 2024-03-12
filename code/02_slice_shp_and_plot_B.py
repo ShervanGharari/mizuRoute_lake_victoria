@@ -117,7 +117,7 @@ riv_slice = riv_slice.to_crs(epsg=4326)
 ctx.add_basemap(ax,
                 zoom=11,
                 crs=cat_slice.crs,
-                alpha = 0.8,
+                alpha = 0.9,
                 source = ctx.providers.CartoDB.Voyager)
                 # source = ctx.providers.CartoDB.Positron)
                 # source=ctx.providers.Stamen.TonerLite)
