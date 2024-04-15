@@ -181,7 +181,7 @@ ax1.scatter(lake_elevation_slice.index,\
 ax1.grid(True)
 ax1.legend(loc=3, fontsize=20)
 ax1.set_xticklabels([])
-ax1.set_ylabel('Lake Victoria Level above \n Mean Sea Level [m]')
+ax1.set_ylabel('Lake Victoria Level \n [m AMSL]')
 ax1.set_xlabel(' ')
 ax1.text(0.02, 0.95, '(a)', transform=ax1.transAxes, fontsize=40, verticalalignment='top')
 
