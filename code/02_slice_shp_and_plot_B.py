@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[5]:
 
 
 # section 1 load all the necessary modules and packages
@@ -13,6 +13,7 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 from shapely.geometry import Polygon
+from shapely.geometry import Point
 # not neccessary for the function but for visualziation
 import matplotlib.pyplot as plt
 import warnings
@@ -32,7 +33,7 @@ font = {'family' : 'Nimbus Roman',
 mpl.rc('font', **font)
 
 
-# In[ ]:
+# In[6]:
 
 
 cat_slice = gpd.read_file('../data/shp/Victoria_cat.shp')
@@ -40,7 +41,7 @@ riv_slice = gpd.read_file('../data/shp/Victoria_riv.shp')
 intersection = gpd.read_file('../data/shp/Victoria_int.shp')
 
 
-# In[ ]:
+# In[16]:
 
 
 world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
@@ -114,10 +115,27 @@ rectangle.plot(ax=ax2,facecolor='none',
 
 riv_slice = riv_slice.to_crs(epsg=4326)
 
+# add Jinja
+# Define the coordinates of Jinja
+latitude = 0.45
+longitude = 33.206943
+name = 'Jinja'
+
+# Create a GeoDataFrame
+geometry = [Point(longitude, latitude)]
+gdf = gpd.GeoDataFrame({'Name': [name]}, geometry=geometry, crs='EPSG:4326')
+
+# name of Jinja
+gdf.plot(ax=ax, color='black', markersize=400, marker='s', label=name, zorder=100)
+for x, y, label in zip(gdf.geometry.x, gdf.geometry.y, gdf['Name']):
+    ax.annotate(label, xy=(x+0.05, y+0.05), xytext=(3, 3), textcoords='offset points')
+
+
+# add base map
 ctx.add_basemap(ax,
-                zoom=11,
+                zoom=10,
                 crs=cat_slice.crs,
-                alpha = 0.9,
+                alpha = 0.4,
                 source = ctx.providers.CartoDB.Voyager)
                 # source = ctx.providers.CartoDB.Positron)
                 # source=ctx.providers.Stamen.TonerLite)
